@@ -89,7 +89,7 @@
             var l = decodeStr(atob(el.dataset.l), k).toLowerCase();
             var x = rot13(f) + "@" + rot13(l);
             el.innerHTML = "<span>" + Math.random().toString(36).substring(3, 4) + "</span>";
-            el.href="#";
+            el.href="javascript:void(0);";
             for (var j = 0, L = x.length; j < L; j++) {
                 el.innerHTML = "<span>" + rot13(x.charAt(j)) + "</span><span>" + Math.random().toString(36).substring(3, 4) + "</span>" + el.innerHTML;
             }
@@ -106,7 +106,7 @@
                 if (b !== "") {
                     str = b.split("").reverse().join("") + "?" + str;
                 }
-                
+
                 openShit(str);
                 return false;
             });
