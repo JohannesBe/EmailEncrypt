@@ -123,13 +123,17 @@
                     }
                 }                
 
+
+
                 var newCopy = getSelectionText();
+                console.log(newCopy);
                 for (var n = 0, N = str.length; n < N; n++) {
                     var strtemp = str[n].substring(1);
-                    str[n] = new RegExp("x(.|\r|\n|\r\n)?" + strtemp, "g");
+                    str[n] = new RegExp("x(.|\r|\n|\r\n)?" + strtemp.split("").join("([a-z0-9])?") + "([a-z0-9]{2})?", "g");
                     newCopy = newCopy.replace(str[n], " "+strtemp.split("").reverse().join("")+" ");
                 }
-
+                console.log(str);
+                console.log(newCopy);
                 e.clipboardData.setData('text/plain', newCopy);
                 e.preventDefault();
             });
