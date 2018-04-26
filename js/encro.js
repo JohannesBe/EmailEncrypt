@@ -100,12 +100,13 @@
                 for (var n = 0, N =children.length-1; n < N; n++) {
                     if (n%2 == 0) str += children[n].innerHTML;
                 }
+                str = str.substring(1);
+
                 var b = rot13(atob(this.dataset.b));
                 if (b !== "") {
                     str = b.split("").reverse().join("") + "?" + str;
                 }
-                // console.log(str);
-                // console.log(str);
+                
                 openShit(str);
                 return false;
             });
